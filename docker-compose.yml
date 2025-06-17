@@ -1,0 +1,21 @@
+services:
+  ros2_fortran:
+    build:
+      context: .
+      dockerfile: docker/Dockerfile
+      platforms:
+        - linux/arm64  
+        - linux/amd64 
+    image: ros2_fortran:humble
+    container_name: fortran_ros2_dev
+    network_mode: host
+    environment:
+      - DISPLAY=${DISPLAY:-:0}
+      - QT_X11_NO_MITSHM=1
+      - ROS_DOMAIN_ID=0
+    volumes:
+      - ./src:/ros2_ws/src
+      - /tmp/.X11-unix:/tmp/.X11-unix:rw
+    stdin_open: true
+    tty: true
+    command: bash

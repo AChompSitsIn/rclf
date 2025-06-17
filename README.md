@@ -16,7 +16,7 @@ A minimal Fortran binding for ROS2 that enables Fortran programs to participate 
 
 1. **Clone the repository**
    ```bash
-   git clone https://github.com/AChompSitsIn/fROS2.git
+   git clone https://github.com/AChompSitsIn/rclf.git
    cd fortran-ros2
    ```
 
